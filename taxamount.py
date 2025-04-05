@@ -15,8 +15,6 @@ def taxamount(income, no_of_months):
         return round(income * 0.4 * no_of_months, 1)
 
 
-
-
 # print(taxamount(5000, 3))  # should return 6000.0
 
 class TestTaxAmount(unittest.TestCase):
