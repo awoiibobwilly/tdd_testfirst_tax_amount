@@ -2,8 +2,12 @@ import unittest
 
 
 def taxamount(income, no_of_months):
+    if isinstance(income, str) or isinstance(no_of_months, str):
+        raise ValueError("String values are not allowed for income or number of months.")
+
     if not isinstance(income, (int, float)) or not isinstance(no_of_months, (int, float)):
-        raise ValueError("Both income and number of months must be numbers.")
+        raise ValueError("Both income and number of months must be numeric types (int or float).")
+
     if income <= 0 or no_of_months <= 0:
         raise ValueError("Both income and number of months must be positive numbers.")
 
