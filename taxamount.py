@@ -2,12 +2,19 @@ import unittest
 
 
 def taxamount(income, no_of_months):
+    if not isinstance(income, (int, float)) or not isinstance(no_of_months, (int, float)):
+        raise ValueError("Both income and number of months must be numbers.")
+    if income <= 0 or no_of_months <= 0:
+        raise ValueError("Both income and number of months must be positive numbers.")
+
     if income < 1000:
         return 0.0
     elif income < 3000:
         return round(income * 0.2 * no_of_months, 1)
     else:
         return round(income * 0.4 * no_of_months, 1)
+
+
 
 
 # print(taxamount(5000, 3))  # should return 6000.0
